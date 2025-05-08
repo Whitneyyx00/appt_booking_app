@@ -28,7 +28,7 @@ function Navbar() {
                     <Link to="/">Home</Link>
                 </li>
                 <li className="link">
-                    <Link to="#">Appointments</Link>
+                    <Link to="/instant-consultation">Instant Consultation</Link>
                 </li>
                 {authToken ? (
                     <>

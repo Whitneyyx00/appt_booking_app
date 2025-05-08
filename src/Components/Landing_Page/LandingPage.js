@@ -1,6 +1,6 @@
 import React from "react";
 import "./LandingPage.css";
-import InstantConsultation from "../InstantConsultationBooking/InstantConsultation";
+import FindDoctorSearch from "../FindDoctorSearch/FindDoctorSearch";
 
 const LandingPage = () => {
     return (
@@ -20,7 +20,8 @@ const LandingPage = () => {
                         <button className="button primary-button">Get Started</button>
                     </a>
                 </div>
-                <InstantConsultation />
+                <h2>Find a Doctor</h2>
+                <FindDoctorSearch />
             </div>
         </section>
     );
