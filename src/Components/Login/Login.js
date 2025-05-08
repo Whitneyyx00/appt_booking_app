@@ -1,80 +1,103 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { API_URL } from "../../config";
 import "./Login.css";
 
 function Login() {
-    const [formData, setFormData] = useState({
-        email: '',
-        password: ''
-    });
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const navigate = useNavigate();
 
-    const [errors, setErrors] = useState({});
+    useEffect(() => {
+        if (sessionStorage.getItem("auth-token")) {
+            navigate("/");
+        }
+    }, [navigate]);
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
-
-    const validateForm = () => {
-        let newErrors = {};
-        if (!formData.email) newErrors.email = "Please enter your email";
-        if (!formData.password) newErrors.password = "Please enter your password";
-        setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
-    };
-
-    const handleSubmit = (e) => {
+    const login = async (e) => {
         e.preventDefault();
-        if (validateForm()) {
-            console.log("Form submitted:", formData);
-            // Add submit logic
+        const res = await fetch(`${API_URL}/api/auth/login`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email: email,
+                password: password,
+            }),
+        });
+        const json = await res.json();
+        if (json.authtoken) {
+            sessionStorage.setItem("auth-token", json.authtoken);
+            sessionStorage.setItem("email", email);
+            navigate("/");
+            window.location.reload();
         } else {
-            console.log("Form has errors");
+            if (json.errors) {
+                for (const error of json.errors) {
+                    alert(error.msg);
+                }
+            } else {
+                alert(json.error);
+            }
         }
     };
 
     return (
-        <div className="login-scontainer">
-            <h1>Login</h1>
-            <p>
-                Are you a new member? <a id="signup-link" href="/signup">Sign Up Here</a>
-            </p>
-            <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="your.email@email.com"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
-                    {errors.email && <p className="error">{errors.email}</p>}
+        <div>
+        <div className="login-container">
+            <div className="login-grid">
+                <div className="login-text">
+                    <h2>Login</h2>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password:</label>
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        placeholder="*************"
-                        value={formData.password}
-                        onChange={handleChange}
-                        required
-                    />
-                    <a id="forgot-password" href="#">
-                        Forgot Password?
-                    </a>
-                    {errors.password && <p className="error">{errors.password}</p>}
+                <div className="login-text">
+                    Are you a new member?
+                    <span>
+                        <Link to="/signup" id="signup-link">
+                            Sign Up Here
+                        </Link>
+                    </span>
                 </div>
-                <button type="submit">Login</button>
-                <button type="reset">Reset</button>
-            </form>
+                <br />
+                <div className="login-form">
+                    <form onSubmit={login}>
+                        <div className="form-group">
+                            <label htmlFor="email">Email</label>
+                            <input
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                type="email"
+                                name="email"
+                                id="email"
+                                className="form-control"
+                                placeholder="Enter your email"
+                                aria-describedby="helpId"
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label htmlFor="password">Password</label>
+                            <input
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                type="password"
+                                name="password"
+                                id="password"
+                                className="form-control"
+                                placeholder="Enter your password"
+                                aria-describedby="helpId"
+                            />
+                            <a href="#" id="forgot-password">Forgot Password?</a>
+                        </div>
+                        <div className="btn-group">
+                            <button type="submit" className="btn btn-primary mb-2 mr-1 waves-effect waves-light">
+                                Login
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
+    </div>
     );
 }
 

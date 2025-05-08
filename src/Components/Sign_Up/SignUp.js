@@ -48,6 +48,8 @@ function SignUp() {
         <div className="signup-container" style={{ marginTop: '5%' }}>
             <div className="signup-grid">
                 <div className="signup-form">
+                    <h1>Create An Account</h1>
+                    <p>Already have an account? <a href="/login" className="login-link">Login</a></p>
                     <form method="POST" onSubmit={register}>
                         <div className="form-group">
                             <label htmlFor="name">Name</label>
