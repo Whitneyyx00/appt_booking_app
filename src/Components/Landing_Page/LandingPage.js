@@ -4,7 +4,7 @@ import "./LandingPage.css";
 const LandingPage = () => {
     return (
         <section className="hero-section">
-            <div className="container">
+            <div className="lp-container">
                 <div className="flex-hero">
                     <h1>
                         Your Health

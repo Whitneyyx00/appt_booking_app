@@ -1,14 +1,14 @@
-.container {
+.signup-container {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #f8f9fa;
+    background-color: #F0FFF0;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-.container h1,
-.container p {
+.signup-container h1,
+.signup-container p {
     text-align: center;
 }
 
