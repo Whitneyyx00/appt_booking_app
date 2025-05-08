@@ -1,7 +1,6 @@
 * {
     margin: 0;
     font-family: "Poppins", sans-serif;
-    box-sizing: border-box;
 }
 body {
     font-family: 'Poppins', sans-serif;
@@ -13,6 +12,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    height: 100vh;
 }
 
 /* Hero Section */

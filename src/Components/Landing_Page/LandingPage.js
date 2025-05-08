@@ -1,5 +1,6 @@
 import React from "react";
 import "./LandingPage.css";
+import InstantConsultation from "../InstantConsultationBooking/InstantConsultation";
 
 const LandingPage = () => {
     return (
@@ -19,6 +20,7 @@ const LandingPage = () => {
                         <button className="button primary-button">Get Started</button>
                     </a>
                 </div>
+                <InstantConsultation />
             </div>
         </section>
     );

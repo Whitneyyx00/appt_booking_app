@@ -1,0 +1,42 @@
+.searchpage-container {
+    max-width: 1200px;
+    margin: auto;
+    margin-top: 7%;
+    color: #333;
+    padding: 0 20px;
+    position: static;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.searchpage-container img {
+  max-width: 100%;
+}
+
+.search-results-container .doctorcard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+}
+
+.search-results-container > h2 {
+    text-align: left;
+    font-size: 28px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.search-results-container > h3 {
+    margin-top: 10px;
+    color: #555;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 400;
+}
