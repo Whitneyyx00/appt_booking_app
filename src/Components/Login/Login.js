@@ -36,7 +36,7 @@ function Login() {
     };
 
     return (
-        <div className="login-container">
+        <div className="login-scontainer">
             <h1>Login</h1>
             <p>
                 Are you a new member? <a id="signup-link" href="/signup">Sign Up Here</a>
