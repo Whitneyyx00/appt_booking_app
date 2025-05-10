@@ -1,0 +1,91 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 60%;
+    max-width: 600px;
+  }
+
+  .feedback-header {
+    margin-top: 15px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .feedback-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .feedback-form label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  .feedback-form input,
+  .feedback-form textarea {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .feedback-form button {
+    background-color: #62FF62;
+    color: #000;
+    font-weight: 500;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+  
+  .feedback-form button:hover {
+    background-color: #00F700;
+  }
+  
+  .star-rating {
+    display: flex;
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .star {
+    cursor: pointer;
+    color: #ccc;
+  }
+
+  .star:hover {
+    color: #FFD75E;
+  }
+  
+  .star.filled {
+    color: #ffc107;
+  }

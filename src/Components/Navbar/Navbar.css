@@ -1,5 +1,5 @@
 nav {
-    background-color: #f8f9fa;
+    background-color: #E4E8EC;
     padding: 1rem 0;
     display: flex;
     justify-content: space-between;
@@ -10,7 +10,7 @@ nav {
     font-size: 1.5rem;
     font-weight: bold;
     padding-left: 20px;
-    color: #007bff;
+    color: #62FF62;
     text-decoration: none;
 }
 
@@ -18,18 +18,18 @@ nav {
     list-style: none;
     display: flex;
     gap: 20px;
-    background-color: #f8f9fa;
+    background-color: #E4E8EC;
 }
 
 .nav__links a {
     text-decoration: none;
     color: #333;
     padding-right: 20px;
-    background-color: #f8f9fa;
+    background-color: #E4E8EC;
 }
 
 .nav__links a:hover {
-    color: #007bff;
+    color: #49A1FF;
     font-weight: bold;
     text-decoration: underline;
     font-size: 1.1rem;

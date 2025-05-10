@@ -1,10 +1,27 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import AppointmentForm from "../AppointmentForm/AppointmentForm";
 import "./DoctorCard.css";
 
 const DoctorCard = ({ doctor }) => {
     const [showAppointmentForm, setShowAppointmentForm] = useState(false);
     const [isBooked, setIsBooked] = useState(false);
+    const StarRating = ({ rating }) => {
+        const stars = [1, 2, 3, 4, 5];
+
+        return (
+            <div className="star-rating">
+                {stars.map((star) => (
+                    <span
+                        key={star}
+                        className={star <= rating ? "star filled" : "star"}
+                    >
+                        ★
+                    </span>
+                ))}
+            </div>
+        );
+    };
 
     const handleBookAppointment = () => {
         setShowAppointmentForm(true);
@@ -30,7 +47,10 @@ const DoctorCard = ({ doctor }) => {
           <div className="doctor-name">{doctor.name}</div>
           <div className="doctor-specialty">{doctor.specialty}</div>
           <div className="doctor-experience">Experience: {doctor.experience} years</div>
-          <div className="doctor-rating">Rating: {doctor.rating} out of 5 stars</div>
+          <div className="doctor-rating">Rating: <StarRating rating={doctor.rating} /> </div>
+          <Link to="/reviews" className="review-link">
+            View Reviews
+          </Link>
           <div className="doctor-card-options-container">
             {!isBooked ? (
                 <button className="book-appointment-btn" onClick={handleBookAppointment}>

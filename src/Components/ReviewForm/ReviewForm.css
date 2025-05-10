@@ -15,7 +15,7 @@
 .reviews-table td {
     border: 1px solid #ddd;
     padding: 8px;
-    text-align: left;
+    text-align: center;
 }
 
 .reviews-table th {
@@ -31,6 +31,23 @@
     cursor: pointer;
 }
 
+.feedback-button:disabled {
+    background-color: #BEBFC5;
+    border: 3px solid #8B8589;
+    color: #000;
+}
+
+.feedback-button:disabled:hover {
+    background-color: #BEBFC5;
+    border: 3px solid #8B8589;
+    color: #000;
+}
+
 .feedback-button:hover {
     background-color: #0056b3;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
 }
