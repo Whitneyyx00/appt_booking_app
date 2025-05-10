@@ -13,7 +13,7 @@ function App() {
   return (
     <BrowserRouter>
         <Navbar />
-        <Notification />
+        <Notification>
         <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/signup" element={<SignUp />} />
@@ -21,6 +21,7 @@ function App() {
             <Route path="/instant-consultation" element={<InstantConsultation />} />
             <Route path="/book-appointment" element={<BookingConsultation />} />
         </Routes>
+        </Notification>
     </BrowserRouter>
   );
 }
