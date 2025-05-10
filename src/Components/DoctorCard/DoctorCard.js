@@ -4,6 +4,7 @@ import "./DoctorCard.css";
 
 const DoctorCard = ({ doctor }) => {
     const [showAppointmentForm, setShowAppointmentForm] = useState(false);
+    const [isBooked, setIsBooked] = useState(false);
 
     const handleBookAppointment = () => {
         setShowAppointmentForm(true);
@@ -11,6 +12,15 @@ const DoctorCard = ({ doctor }) => {
 
     const handleCloseAppointmentForm = () => {
         setShowAppointmentForm(false);
+    };
+
+    const handleAppointmentBooked = () => {
+        setIsBooked(true);
+        setShowAppointmentForm(false);
+    };
+
+    const handleCancelAppointment = () => {
+        setIsBooked(false);
     };
 
     return (
@@ -21,11 +31,17 @@ const DoctorCard = ({ doctor }) => {
           <div className="doctor-specialty">{doctor.specialty}</div>
           <div className="doctor-experience">Experience: {doctor.experience} years</div>
           <div className="doctor-rating">Rating: {doctor.rating} out of 5 stars</div>
-          <div>
-            <button className='book-appointment-btn' onClick={handleBookAppointment}>
-              <div>Book Appointment</div>
-              <div>No Booking Fee</div>
-            </button>
+          <div className="doctor-card-options-container">
+            {!isBooked ? (
+                <button className="book-appointment-btn" onClick={handleBookAppointment}>
+                    <div>Book Appointment</div>
+                    <div>No Booking Fee</div>
+                </button>
+            ) : (
+                <button className="cancel-appointment-btn" onClick={handleCancelAppointment}>
+                    Cancel Appointment
+                </button>
+            )}
           </div>
         </div>
 
@@ -33,6 +49,7 @@ const DoctorCard = ({ doctor }) => {
             <AppointmentForm
                 doctorName={doctor.name}
                 onClose={handleCloseAppointmentForm}
+                onAppointmentBooked={handleAppointmentBooked}
             />
         )}
       </div>

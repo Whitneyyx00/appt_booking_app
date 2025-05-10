@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./AppointmentForm.css";
 
-const AppointmentForm = ({ doctorName, onClose }) => {
+const AppointmentForm = ({ doctorName, onClose, onAppointmentBooked }) => {
     const [patientName, setPatientName] = useState('');
     const [appointmentDate, setAppointmentDate] = useState('');
     const [appointmentTime, setAppointmentTime] = useState('');
@@ -16,6 +16,7 @@ const AppointmentForm = ({ doctorName, onClose }) => {
             appointmentTime: appointmentTime,
             phoneNumber: phoneNumber,
         });
+        onAppointmentBooked();
         // Close the form after submission
         onClose();
     };
