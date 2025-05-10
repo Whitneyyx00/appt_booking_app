@@ -9,13 +9,19 @@ const AppointmentForm = ({ doctorName, onClose, onAppointmentBooked }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('Appointment Details:', {
+        
+        const appointmentDetails = {
             doctorName: doctorName,
             patientName: patientName,
             appointmentDate: appointmentDate,
             appointmentTime: appointmentTime,
             phoneNumber: phoneNumber,
-        });
+        };
+
+        window.dispatchEvent(new CustomEvent("appointmentBooked", {
+            detail: appointmentDetails
+        }));
+
         onAppointmentBooked();
         // Close the form after submission
         onClose();

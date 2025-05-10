@@ -1,0 +1,37 @@
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #F0FFF0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 350px;
+    z-index: 1000;
+}
+
+.notification-content h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.notification-content p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.notification .cancel-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.notification .cancel-button:hover {
+    background-color: #c82333;
+}
