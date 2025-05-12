@@ -1,0 +1,116 @@
+.profile-container {
+    max-width: 725px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #CCE7FF;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.profile-details h1 {
+    color: #333;
+    margin-bottom: 10px;
+    margin: 0 auto;
+}
+
+.profile-details p {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.profile-details button {
+    background-color: #86FF86;
+    color: #000;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.profile-details button:hover {
+    background-color: #3FFF3F;
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-form label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.profile-form input,
+.profile-form textarea {
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.profile-form textarea {
+    height: 100px;
+}
+
+.profile-form button {
+    background-color: #86FF86;
+    color: #000;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.profile-form button:hover {
+    background-color: #3FFF3F;
+    text-decoration: underline;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    margin: 0 auto;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #4949FF;
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+    color: #0000E6;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
