@@ -9,6 +9,7 @@ import BookingConsultation from "./Components/BookingConsultation";
 import Notification from "./Components/Notification/Notification";
 import ReviewForm from "./Components/ReviewForm/ReviewForm";
 import ProfileForm from "./Components/ProfileForm/ProfileForm";
+import ReportsLayout from "./Components/ReportsLayout/ReportsLayout";
 import './App.css';
 
 function App() {
@@ -64,6 +65,7 @@ function App() {
             <Route path="/book-appointment" element={<BookingConsultation />} />
             <Route path="/reviews" element={<ReviewForm />} />
             <Route path="/profile" element={<ProfileForm />} />
+            <Route path="/reports" element={<ReportsLayout />} />
         </Routes>
     </BrowserRouter>
   );

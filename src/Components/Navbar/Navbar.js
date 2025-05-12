@@ -49,6 +49,7 @@ function Navbar() {
                         </button>
                         <div className={`dropdown-menu ${isDropdownOpen ? "show" : ""}`}>
                             <Link to="/profile" className="dropdown-item">Your Profile</Link>
+                            <Link to="/reports" className="dropdown-item">Your Reports</Link>
                             <button className="dropdown-item" onClick={handleLogout}>Logout</button>
                         </div>
                     </div>
