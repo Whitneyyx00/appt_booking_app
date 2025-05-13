@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ProfileForm.css";
 
-const API_URL = "https://whitneyxgunt-8181.theiadockernext-1-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/";
+const API_URL = "https://whitneyxgunt-8181.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/";
 
 const ProfileForm = () => {
     const [userDetails, setUserDetails] = useState({});
